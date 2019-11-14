@@ -1,0 +1,17 @@
+[alias]
+	s = status
+	co = checkout
+	br = branch
+	ci = commit
+	cane = commit --amend --no-edit
+	lo = log --oneline -n 10
+	a = add .
+	cm = commit -m
+[user]
+	name = dylanling
+	email = dylan.ling@lyric.com
+[core]
+	excludesfile = ~/.gitignore_global
+[pager]
+	branch = false
+	lo = false
