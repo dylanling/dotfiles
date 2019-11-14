@@ -9,7 +9,7 @@
 	cm = commit -m
 [user]
 	name = dylanling
-	email = dylan.ling@lyric.com
+	email = setme@example.com
 [core]
 	excludesfile = ~/.gitignore_global
 [pager]
