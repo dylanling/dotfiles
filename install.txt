@@ -1,0 +1,16 @@
+# Terminal
+pure prompt
+zsh
+
+# Git stuff
+git trim
+
+# Runtime management
+nvm
+rvm
+pyenv
+jenv
+
+# Misc
+fzf
+ag/silver searcher

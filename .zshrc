@@ -88,8 +88,6 @@ alias imageprune='docker rmi $(docker images -q --filter "dangling=true")'
 # docker postgres
 export POSTGRES_USER=postgres
 export POSTGRES_PASSWORD=postgres
-export LYRIC_PG_USER=lyric
-export LYRIC_PG_PASSWORD=GuestDelight!
 
 # https://ryaneschinger.com/blog/dockerized-postgresql-development-environment/
 
