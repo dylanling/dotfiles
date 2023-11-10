@@ -14,3 +14,10 @@ jenv
 # Misc
 fzf
 ag/silver searcher
+
+
+https://gist.github.com/ganapativs/e571d9287cb74121d41bfe75a0c864d7
+https://github.com/webpro/awesome-dotfiles
+iterm cursor shape
+https://stackoverflow.com/questions/6205157/how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line/29403520#29403520
+gitconfig
