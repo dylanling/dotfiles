@@ -14,7 +14,22 @@ jenv
 # Misc
 fzf
 ag/silver searcher
+rectangle
 
+# vscode extensions
+docker
+dev containers
+git blame
+git history
+prettier
+rainbow csv
+ruby
+ruby lsp
+sort lines
+terraform
+protobuf (vscode-proto3)
+vscode-styled-components
+rubocop
 
 https://gist.github.com/ganapativs/e571d9287cb74121d41bfe75a0c864d7
 https://github.com/webpro/awesome-dotfiles
