@@ -1,0 +1,32 @@
+[alias]
+    s = status
+    co = checkout
+    br = branch
+    ci = commit
+    cane = commit --amend --no-edit
+    lo = log --oneline -n 10
+    a = add .
+    cm = commit -m
+    publish = !git push --set-upstream origin `git branch --show-current`
+    mm = !git fetch origin main:main && git merge main
+[user]
+    name = "Dylan Ling"
+    email = dylan.ling@chime.com
+    signingkey = <update this>
+[core]
+    excludesfile = ~/.gitignore_global
+[pager]
+    branch = false
+    lo = false
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[commit]
+    gpgsign = true
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[init]
+    defaultBranch = main
+[push]
+    default = current

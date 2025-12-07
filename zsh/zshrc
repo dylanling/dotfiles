@@ -1,0 +1,57 @@
+# --------------------------------------------------
+# Paths
+# --------------------------------------------------
+export DOTFILES="$HOME/dotfiles"
+export ZDOTDIR="$DOTFILES/zsh"
+
+# --------------------------------------------------
+# Base env
+# --------------------------------------------------
+if [ -f "$ZDOTDIR/zsh_env" ]; then
+  source "$ZDOTDIR/zsh_env"
+fi
+
+if [ -f "$ZDOTDIR/zsh_secrets" ]; then
+  source "$ZDOTDIR/zsh_secrets"
+fi
+
+# --------------------------------------------------
+# History
+# --------------------------------------------------
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt SHARE_HISTORY
+
+# --------------------------------------------------
+# Prompt (Oh My Posh)
+# --------------------------------------------------
+# Make sure oh-my-posh is installed and on PATH
+if command -v oh-my-posh >/dev/null 2>&1; then
+  eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/theme.omp.json)"
+fi
+
+# --------------------------------------------------
+# Completion / keybindings
+# --------------------------------------------------
+autoload -Uz compinit
+compinit
+
+bindkey -e                    # emacs-style keybindings
+setopt AUTO_CD
+setopt CORRECT
+setopt NO_BEEP
+
+if [ -f "$ZDOTDIR/zsh_runtimes" ]; then
+  source "$ZDOTDIR/zsh_runtimes"
+fi
+
+eval "$(oh-my-posh init zsh --config '~/.config/ohmyposh/prompt.toml')"
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
+
+if [ -f "$ZDOTDIR/zsh_aliases" ]; then
+  source "$ZDOTDIR/zsh_aliases"
+fi

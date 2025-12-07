@@ -1,0 +1,31 @@
+# ==============================================
+# Node: nvm
+# ==============================================
+# Prefer Homebrew-installed nvm on macOS if present
+if [ -d "/opt/homebrew/opt/nvm" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  # Set up env vars for brew nvm
+  export NVM_SYMLINK_CURRENT=true
+
+  # Load nvm
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+  # Optional: nvm bash_completion (works in zsh too)
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+elif [ -d "$HOME/.nvm" ]; then
+  # Fallback to ~/.nvm install
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+fi
+
+
+# ==============================================
+# Ruby: rbenv
+# ==============================================
+if command -v rbenv >/dev/null 2>&1; then
+  # Initialize rbenv
+  eval "$(rbenv init - zsh)"
+fi
+
+# TODO: maybe just migrate to asdf
