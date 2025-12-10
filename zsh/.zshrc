@@ -7,12 +7,12 @@ export ZDOTDIR="$DOTFILES/zsh"
 # --------------------------------------------------
 # Base env
 # --------------------------------------------------
-if [ -f "$ZDOTDIR/.zsh_env" ]; then
-  source "$ZDOTDIR/.zsh_env"
-fi
-
 if [ -f "$ZDOTDIR/.zsh_secrets" ]; then
   source "$ZDOTDIR/.zsh_secrets"
+fi
+
+if [ -f "$ZDOTDIR/.zsh_env" ]; then
+  source "$ZDOTDIR/.zsh_env"
 fi
 
 # --------------------------------------------------
