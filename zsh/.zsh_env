@@ -16,4 +16,4 @@ export BUNDLE_GITHUB__COM="$GITHUB_TOKEN:x-oauth-basic"
 export BUNDLE_CHIME__JFROG__IO="$ARTIFACTORY_READ_USER:$ARTIFACTORY_READ_TOKEN"
 export WORK_DIR_PATH=~/dev/chime
 export LOCAL_GEM_PATH=$WORK_DIR_PATH
-export ARCH="M2" # Make sure this is up to date
+export ARCH="M4"

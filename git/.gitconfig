@@ -12,7 +12,7 @@
 [user]
     name = "Dylan Ling"
     email = dylan.ling@chime.com
-    signingkey = <update this>
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL+MwHM0YDmD0V3PJ8Q2PTq3OZdsg2o9rl1XNfCSzKZA
 [core]
     excludesfile = ~/.gitignore_global
 [pager]

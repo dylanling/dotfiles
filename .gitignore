@@ -1,1 +1,9 @@
-zsh/zsh_secrets
+zsh/.zsh_secrets
+zsh/.zsh_history
+zsh/.zcompdump
+
+# zinit stuff
+/.zinit/
+.zinit/
+/.cache/zsh/
+/zcompdump*
