@@ -8,18 +8,20 @@ if ! command -v brew >/dev/null 2>&1; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# 2. Install oh-my-posh and zinit
-if ! command -v oh-my-posh >/dev/null 2>&1; then
-  brew install jandedobbeleer/oh-my-posh/oh-my-posh
+# 2. Install tools from Brewfile
+if [ -f "$DOTFILES/Brewfile" ]; then
+  echo "Installing packages from Brewfile..."
+  brew bundle --file="$DOTFILES/Brewfile"
 fi
 
+# 3. Install zinit
 if [[ ! -f "${HOME}/.zinit/bin/zinit.zsh" ]]; then
   echo "Installing zinit..."
   mkdir -p "${HOME}/.zinit"
   git clone https://github.com/zdharma-continuum/zinit.git "${HOME}/.zinit/bin"
 fi
 
-# 3. Symlinks
+# 4. Symlinks
 ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 ln -sf "$DOTFILES/git/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$DOTFILES/git/.gitignore_global" "$HOME/.gitignore_global"
