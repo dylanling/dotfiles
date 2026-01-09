@@ -15,6 +15,11 @@ if [ -f "$ZDOTDIR/.zsh_env" ]; then
   source "$ZDOTDIR/.zsh_env"
 fi
 
+# Machine-specific overrides (not tracked in git)
+if [ -f "$ZDOTDIR/.zsh_env.local" ]; then
+  source "$ZDOTDIR/.zsh_env.local"
+fi
+
 # --------------------------------------------------
 # History
 # --------------------------------------------------

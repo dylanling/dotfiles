@@ -1,0 +1,15 @@
+# Company-specific environment variables
+# Copy this file to .zsh_env.local and fill in your values
+# This file is gitignored - your actual values stay local
+
+# Artifactory credentials (token should be in .zsh_secrets)
+export ARTIFACTORY_READ_USER="your.username"
+export ARTIFACTORY_NPM_AUTH=$(echo -n "$ARTIFACTORY_READ_USER:$ARTIFACTORY_READ_TOKEN" | base64)
+export BUNDLE_CHIME__JFROG__IO="$ARTIFACTORY_READ_USER:$ARTIFACTORY_READ_TOKEN"
+
+# GitHub bundler auth
+export BUNDLE_GITHUB__COM="$GITHUB_TOKEN:x-oauth-basic"
+
+# Work directory paths
+export WORK_DIR_PATH=~/dev/your-company
+export LOCAL_GEM_PATH=$WORK_DIR_PATH

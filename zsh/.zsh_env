@@ -1,17 +1,17 @@
-# PATH & CLI tools
+# Portable environment variables
+# Company-specific config goes in .zsh_env.local (see .zsh_env.local.example)
+
+# PATH
 export PATH="/opt/homebrew/bin:$PATH"
 
 # Locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Chime non-secret env vars
-# GITHUB_TOKEN, ARTIFACTORY_READ_TOKEN, LOCALSTACK_AUTH_TOKEN in secrets
-export HOMEBREW_GITHUB_API_TOKEN=$GITHUB_TOKEN
-export ARTIFACTORY_READ_USER="dylan.ling"
-export ARTIFACTORY_NPM_AUTH=$(echo -n "$ARTIFACTORY_READ_USER:$ARTIFACTORY_READ_TOKEN" | base64)
-export BUNDLE_CHIME__JFROG__IO="$ARTIFACTORY_READ_USER:$ARTIFACTORY_READ_TOKEN"
-export BUNDLE_GITHUB__COM="$GITHUB_TOKEN:x-oauth-basic"
-export WORK_DIR_PATH=~/dev/chime
-export LOCAL_GEM_PATH=$WORK_DIR_PATH
+# Architecture (auto-detect)
 export ARCH=$(uname -m)
+
+# Homebrew GitHub API (uses token from secrets if available)
+if [ -n "$GITHUB_TOKEN" ]; then
+  export HOMEBREW_GITHUB_API_TOKEN=$GITHUB_TOKEN
+fi
