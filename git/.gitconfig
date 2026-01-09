@@ -12,12 +12,11 @@
 [user]
     name = "Dylan Ling"
     # Default email - override in .gitconfig-work for work repos
-    email = your-personal@email.com
+    email = dylan.t.ling@gmail.com
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL+MwHM0YDmD0V3PJ8Q2PTq3OZdsg2o9rl1XNfCSzKZA
 
 # Include work config when in work directories
-# Adjust the path pattern to match your work directory
-[includeIf "gitdir:~/dev/work/"]
+[includeIf "gitdir:~/dev/chime/"]
     path = ~/.gitconfig-work
 
 [core]
