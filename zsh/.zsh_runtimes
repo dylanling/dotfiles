@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+# Language runtime managers - sourced by .zshrc
 
 # ==============================================
 # Node: nvm

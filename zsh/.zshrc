@@ -53,8 +53,9 @@ fi
 # --------------------------------------------------
 # Completion / keybindings
 # --------------------------------------------------
-autoload -Uz compinit
-compinit
+if [ -f "$ZDOTDIR/completion.zsh" ]; then
+  source "$ZDOTDIR/completion.zsh"
+fi
 
 bindkey -e                    # emacs-style keybindings
 setopt AUTO_CD

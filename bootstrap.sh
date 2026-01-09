@@ -27,4 +27,4 @@ mkdir -p "$HOME/.config/ohmyposh"
 ln -sf "$DOTFILES/ohmyposh/prompt.toml" "$HOME/.config/ohmyposh/prompt.toml"
 
 
-echo "✅ Dotfiles linked. Remember to create $DOTFILES/zsh/zsh_secrets on this machine."
+echo "✅ Dotfiles linked. Remember to create $DOTFILES/zsh/.zsh_secrets on this machine."

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+# Shell aliases - sourced by .zshrc
 
 # Git, rest in .gitconfig
 alias g='git'
