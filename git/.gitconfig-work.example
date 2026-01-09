@@ -1,0 +1,8 @@
+# Work-specific git configuration
+# Copy to git/.gitconfig-work (or directly to ~/.gitconfig-work) and update values
+# Adjust the includeIf path in .gitconfig to match your actual work directory
+
+[user]
+    email = your.name@company.com
+    # Optionally override signing key if different for work
+    # signingkey = ssh-ed25519 AAAA...

@@ -24,6 +24,11 @@ ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 ln -sf "$DOTFILES/git/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$DOTFILES/git/.gitignore_global" "$HOME/.gitignore_global"
 
+# Work git config (optional - only if you've created one)
+if [ -f "$DOTFILES/git/.gitconfig-work" ]; then
+  ln -sf "$DOTFILES/git/.gitconfig-work" "$HOME/.gitconfig-work"
+fi
+
 mkdir -p "$HOME/.config/ohmyposh"
 ln -sf "$DOTFILES/ohmyposh/prompt.toml" "$HOME/.config/ohmyposh/prompt.toml"
 

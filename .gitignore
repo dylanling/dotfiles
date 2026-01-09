@@ -2,6 +2,7 @@ zsh/.zsh_secrets
 zsh/.zsh_env.local
 zsh/.zsh_history
 zsh/.zcompdump
+git/.gitconfig-work
 
 # zinit stuff
 /.zinit/

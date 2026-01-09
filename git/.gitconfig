@@ -11,8 +11,15 @@
     mm = !git fetch origin main:main && git merge main
 [user]
     name = "Dylan Ling"
-    email = dylan.ling@chime.com
+    # Default email - override in .gitconfig-work for work repos
+    email = your-personal@email.com
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL+MwHM0YDmD0V3PJ8Q2PTq3OZdsg2o9rl1XNfCSzKZA
+
+# Include work config when in work directories
+# Adjust the path pattern to match your work directory
+[includeIf "gitdir:~/dev/work/"]
+    path = ~/.gitconfig-work
+
 [core]
     excludesfile = ~/.gitignore_global
 [pager]
