@@ -2,6 +2,7 @@
 # Company-specific config goes in .zsh_env.local (see .zsh_env.local.example)
 
 # PATH
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 
 # Locale
