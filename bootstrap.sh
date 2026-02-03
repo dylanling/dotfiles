@@ -34,5 +34,7 @@ fi
 mkdir -p "$HOME/.config/ohmyposh"
 ln -sf "$DOTFILES/ohmyposh/prompt.toml" "$HOME/.config/ohmyposh/prompt.toml"
 
+mkdir -p "$HOME/.config/ghostty"
+ln -sf "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config"
 
 echo "✅ Dotfiles linked. Remember to create $DOTFILES/zsh/.zsh_secrets on this machine."
