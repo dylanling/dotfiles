@@ -62,9 +62,9 @@ Quick reference for where to add new configuration:
 
 ### Git
 
-- SSH commit signing via 1Password
 - Automatic SSH URL rewriting for GitHub
 - Useful aliases: `s`, `co`, `br`, `ci`, `cane`, `lo`, `a`, `cm`, `publish`, `mm`
+- Work-specific config support via `includeIf` (see `.gitconfig-work.example`)
 
 ### Runtime Managers
 
@@ -76,28 +76,45 @@ Quick reference for where to add new configuration:
 ## Installation
 
 ```bash
-git clone git@github.com:dling14/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-./bootstrap.sh
+curl -fsSL https://raw.githubusercontent.com/dling14/dotfiles/main/bootstrap.sh | bash
 ```
 
 The bootstrap script will:
 1. Install Homebrew (if missing)
-2. Install packages from the Brewfile (fzf, zoxide, asdf, oh-my-posh, etc.)
-3. Install Zinit plugin manager
-4. Create symlinks for configs (`.zshrc`, `.gitconfig`, `.gitignore_global`, prompt)
+2. Clone the dotfiles repo to `~/dotfiles`
+3. Install packages from the Brewfile (fzf, zoxide, asdf, oh-my-posh, etc.)
+4. Install Zinit plugin manager
+5. Create symlinks for configs (`.zshrc`, `.gitconfig`, `.gitignore_global`, prompt)
+6. Configure git work directory (if `WORK_ORG` is set)
 
-After installation, create your secrets file:
-
-```bash
-$EDITOR ~/dotfiles/zsh/.zsh_secrets
-```
-
-Add any tokens needed (e.g., `GITHUB_TOKEN`, `ARTIFACTORY_READ_TOKEN`), then reload:
+After installation, reload your shell:
 
 ```bash
 exec zsh
 ```
+
+### Work Configuration (Optional)
+
+To set up work-specific git config (different email, signing, etc.):
+
+1. Create `.zsh_env.local` with your org name:
+   ```bash
+   cp ~/dotfiles/zsh/.zsh_env.local.example ~/dotfiles/zsh/.zsh_env.local
+   # Edit and set WORK_ORG="your-company"
+   ```
+
+2. Create `.gitconfig-work` with your work settings:
+   ```bash
+   cp ~/dotfiles/git/.gitconfig-work.example ~/dotfiles/git/.gitconfig-work
+   # Edit with your work email, signing key, etc.
+   ```
+
+3. Re-run bootstrap to add the git `includeIf`:
+   ```bash
+   ./bootstrap.sh
+   ```
+
+This will apply `.gitconfig-work` to all repos under `~/dev/<WORK_ORG>/`.
 
 ## Updating
 

@@ -1,8 +1,20 @@
 # Work-specific git configuration
-# Copy to git/.gitconfig-work (or directly to ~/.gitconfig-work) and update values
-# Adjust the includeIf path in .gitconfig to match your actual work directory
+# Copy to git/.gitconfig-work and customize
+#
+# The includeIf directive is automatically added by bootstrap.sh when WORK_ORG
+# is set in .zsh_env.local. It will apply this config to repos under ~/dev/<WORK_ORG>/
 
 [user]
     email = your.name@company.com
-    # Optionally override signing key if different for work
-    # signingkey = ssh-ed25519 AAAA...
+
+# Optional: SSH commit signing with 1Password
+# Uncomment and configure if your org requires signed commits
+#
+# [user]
+#     signingkey = ssh-ed25519 AAAA...
+# [commit]
+#     gpgsign = true
+# [gpg]
+#     format = ssh
+# [gpg "ssh"]
+#     program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign

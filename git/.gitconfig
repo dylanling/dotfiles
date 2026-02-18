@@ -11,14 +11,7 @@
     mm = !git fetch origin main:main && git merge main
 [user]
     name = "Dylan Ling"
-    # Default email - override in .gitconfig-work for work repos
     email = dylan.t.ling@gmail.com
-    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL+MwHM0YDmD0V3PJ8Q2PTq3OZdsg2o9rl1XNfCSzKZA
-
-# Include work config when in work directories
-[includeIf "gitdir:~/dev/chime/"]
-    path = ~/.gitconfig-work
-
 [core]
     excludesfile = ~/.gitignore_global
 [pager]
@@ -26,12 +19,6 @@
     lo = false
 [url "git@github.com:"]
     insteadOf = https://github.com/
-[commit]
-    gpgsign = true
-[gpg]
-    format = ssh
-[gpg "ssh"]
-    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [init]
     defaultBranch = main
 [push]
