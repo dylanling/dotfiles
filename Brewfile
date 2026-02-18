@@ -9,8 +9,7 @@ brew "ripgrep"
 brew "git"
 
 # Runtime managers
-brew "nvm"
-brew "rbenv"
+brew "asdf"
 
 # Shell prompt
 brew "jandedobbeleer/oh-my-posh/oh-my-posh"

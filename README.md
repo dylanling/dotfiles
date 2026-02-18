@@ -19,7 +19,7 @@ dotfiles/
     ├── .zsh_aliases      # Shell aliases
     ├── .zsh_env          # Environment variables (portable)
     ├── .zsh_env.local    # Machine-specific env (gitignored)
-    ├── .zsh_runtimes     # Language runtime managers (nvm, rbenv)
+    ├── .zsh_runtimes     # Language runtime managers (asdf)
     ├── .zsh_secrets      # API tokens (gitignored)
     ├── plugins.zsh       # Zinit plugin definitions
     └── completion.zsh    # Completion settings
@@ -37,7 +37,7 @@ Quick reference for where to add new configuration:
 | `.zsh_env` | Environment variables (portable) | PATH changes, locale settings |
 | `.zsh_env.local` | Machine-specific env (gitignored) | Company-specific variables |
 | `.zsh_aliases` | Shell aliases | New command shortcuts |
-| `.zsh_runtimes` | Language version managers | Adding rbenv, nvm, pyenv, etc. |
+| `.zsh_runtimes` | Language version managers | asdf configuration and plugins |
 | `.zsh_secrets` | API tokens (gitignored) | Credentials, tokens |
 | `plugins.zsh` | Zinit plugin declarations | Adding/removing zsh plugins |
 | `completion.zsh` | Completion settings | Completion behavior changes |
@@ -68,8 +68,10 @@ Quick reference for where to add new configuration:
 
 ### Runtime Managers
 
-- **Node**: nvm (Homebrew or standalone)
-- **Ruby**: rbenv
+- **asdf**: Universal version manager for Node, Ruby, Python, and more
+  - Install plugins: `asdf plugin add nodejs`, `asdf plugin add ruby`
+  - Install versions: `asdf install nodejs latest`, `asdf install ruby latest`
+  - Set global versions: `asdf global nodejs latest`, `asdf global ruby latest`
 
 ## Installation
 
@@ -81,7 +83,7 @@ cd ~/dotfiles
 
 The bootstrap script will:
 1. Install Homebrew (if missing)
-2. Install packages from the Brewfile (fzf, zoxide, nvm, rbenv, oh-my-posh, etc.)
+2. Install packages from the Brewfile (fzf, zoxide, asdf, oh-my-posh, etc.)
 3. Install Zinit plugin manager
 4. Create symlinks for configs (`.zshrc`, `.gitconfig`, `.gitignore_global`, prompt)
 
