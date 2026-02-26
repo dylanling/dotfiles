@@ -13,21 +13,6 @@
       "Grep",
       "Task"
     ],
-    "deny": [
-      "Bash(rm -rf *)"
-    ]
-  },
-  "hooks": {
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "cd ~/notes && if [ -n \"$(git status --porcelain)\" ]; then echo '⚠️  You have uncommitted changes in ~/notes/. Run /commit or commit manually.'; fi"
-          }
-        ]
-      }
-    ]
+    "deny": ["Bash(rm -rf *)"]
   }
 }
