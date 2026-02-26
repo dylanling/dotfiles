@@ -15,3 +15,7 @@ alias lc='ls -CF'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
+
+# claude
+alias claude='claude --permission-mode acceptEdits'
+
