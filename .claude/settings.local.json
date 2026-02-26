@@ -5,7 +5,8 @@
       "Bash(git commit:*)",
       "Bash(cat:*)",
       "Bash(ln:*)",
-      "Bash(xxd:*)"
+      "Bash(xxd:*)",
+      "Bash(bash:*)"
     ],
     "deny": [],
     "ask": []
