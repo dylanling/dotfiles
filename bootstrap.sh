@@ -65,7 +65,4 @@ ln -sf "$DOTFILES/ohmyposh/prompt.toml" "$HOME/.config/ohmyposh/prompt.toml"
 mkdir -p "$HOME/.config/ghostty"
 ln -sf "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config"
 
-mkdir -p "$HOME/.claude"
-ln -sf "$DOTFILES/claude/settings.json" "$HOME/.claude/settings.json"
-
 echo "Done! Remember to create $DOTFILES/zsh/.zsh_secrets on this machine."
