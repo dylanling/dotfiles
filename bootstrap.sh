@@ -2,7 +2,7 @@
 set -e
 
 DOTFILES="$HOME/dotfiles"
-REPO="https://github.com/dling14/dotfiles.git"
+REPO="https://github.com/dotfiles/dotfiles.git"
 
 # 1. Homebrew (installs Xcode CLT which includes git)
 if ! command -v brew >/dev/null 2>&1; then
