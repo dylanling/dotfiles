@@ -12,10 +12,20 @@ alias la='ls -A'
 alias lc='ls -CF'
 
 # cp
-alias cp='cp -iv'
-alias mv='mv -iv'
+alias cp='cp -v'
+alias mv='mv -v'
 alias rm='rm -v'
 
 # claude
 alias claude='claude --permission-mode acceptEdits'
+
+# daily note
+dn() {
+  local date=$(date +%Y-%m-%d)
+  local file="$HOME/notes/daily/${date}.md"
+  if [[ ! -f "$file" ]]; then
+    sed "s/{{date}}/$date/g" "$HOME/notes/templates/daily.md" > "$file"
+  fi
+  nvim "$file"
+}
 
